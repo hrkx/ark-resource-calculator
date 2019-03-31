@@ -1,10 +1,5 @@
-//ARK Item Database
-//	maintained by Jord Sti <jord52@gmail.com>
-//
 // Data coming from : http://ark.gamepedia.com/
-// and http://www.arkchives.com/
 // all items are in the array "ark_items"
-// Current items of Ark 195.0
 // each items contains these attributes
 //		name : Item Name
 //		maxStack : Maximum item per stack
