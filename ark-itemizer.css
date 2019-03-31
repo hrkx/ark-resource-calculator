@@ -1,0 +1,374 @@
+:root {
+	--bodycolor: #F5F9FF;
+	--maincolor: #1E88E5;
+	--mainfont: 'Nunito', sans-serif;
+	--secondfont: 'Nunito', sans-serif;
+  --mainradius: 8px;
+	--cardbackground: #fff;
+  --white: #fff;
+  --border: #CDD9ED;
+  --shadow: 0 2px 4px rgba(22, 30, 50, .04);
+  --text-color: #6C7486;
+  --text-color-headline: #3F4656;
+}
+body {
+	background: var(--bodycolor);
+	padding: 0;
+	margin: 0;
+ font-family: var(--mainfont);
+    color: var(--text-color);
+
+}
+#bg {
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 10rem;
+    position: absolute;
+	width: 100%;
+	height: 100px;	
+  background: var(--maincolor);
+}
+.navbar {
+	color: #fff;
+	font-weight: 500;
+	font-size: 28px;
+	text-align: center;
+	padding: 15px;
+	margin-bottom: 0;
+}
+.basic-card {
+	overflow: hidden;
+	width: 97%;
+	background: #fff;
+	max-width: 750px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	box-shadow: var(--shadow);
+	border-radius: 8px;
+    border: 1px solid var(--border);
+
+}
+#ark-calculator-current-item {
+ transition: all 0.333s;
+      margin-top: 10px;
+	box-shadow: var(--shadow);
+    border-radius: 8px;
+width: 97%;
+    background: #fff;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+      border: 1px solid var(--border);
+
+}
+#ark-calculator-current-item:empty ~ .clear {
+  display: none;
+}
+#ark-calculator-totals:empty {
+  border: none !important;
+}
+#ark-calculator-current-item:empty  {
+border: none;
+}
+.ark-js-link:hover {
+	cursor: pointer;
+}
+.ark-calculator-totals-container {
+  transition: 0.333s;
+}
+.ark-js-link {
+	font-weight: bold;
+  font-size: 24px;
+      width: 100%;
+    /* background: red; */
+    display: block;
+}
+.ark-js-link img{
+  width: 20px !important;
+  height: 20px !important;
+  display: block;
+  margin-right: 10px;
+  margin-left: 10px;
+
+}
+
+.ark-item-name {
+	font-weight: bold;
+	font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+}
+.ark-item-popup:before {
+  background: red;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.ark-item-popup {
+	font-size: 12px;
+  transition: all 0.333s;
+}
+.ark-item-popup-head {
+  position: relative;
+}
+.ark-search-item-match
+{
+	width: 200px;
+	height: 22px;
+}
+
+#ark-search-box {
+	display: inline;
+}
+
+#ark-search-item-matches {
+	display: none;
+	visibility: hidden;
+  border-radius: 8px;
+	background-color: #fff;
+  color: #6C7486;
+box-shadow: var(--shadow);
+	border-radius: 8px;
+    border: 1px solid var(--border);
+  padding: 5px;
+  position: absolute; top: 60px; left: 0px;
+  width: 95%;
+left: 38.5% !important;
+margin-left: -37.5%;
+  margin-top: 30px;
+	animation: swing-in-top-fwd 0.333s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+
+}
+@keyframes swing-in-top-fwd{0%{transform:rotateX(-100deg);transform-origin:top;opacity:0}100%{transform:rotateX(0deg);transform-origin:top;opacity:1}}
+#ark-calculator-quantity {
+}
+
+.ark-calculator-item-name
+{
+	margin-left: 10px;
+	margin-right: 8px;
+	display: inline;
+}
+
+.ark-calculator-entry {
+    overflow: hidden;
+    padding-top: 9px;
+    padding-bottom: 7px;
+    font-weight: bold;
+    vertical-align: baseline;
+}
+
+.ark-item-id {
+	font-size: 11px;
+	font-weight: bold;
+	float: right;
+}
+
+.ark-item-image {
+	width: 32px;
+	height: 32px;
+}
+
+.ark-item-image-container {
+	width: 100%;
+  text-align: center;
+	display: block;
+  padding-top: 10px;
+}
+
+.ark-item-description {
+	float: right;
+	width: 50%;
+}
+
+.ark-float-clear {
+	clear: both;
+}
+
+.ark-item-recipe-image {
+	width: 20px;
+	height: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+.popup-recipe-name {
+  display: block;
+  font-size: 18px;
+  margin: 2px;
+}
+.ark-item-recipe-item {
+width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.ark-item-recipe {
+    display: flex;
+    flex-wrap: wrap;  
+  margin-top: 10px;
+}
+.close-btn {
+  position:absolute;
+  top: 15px;
+  right: 12px;
+  font-size: 17px;
+}
+.ark-close-popup-link {
+	cursor: pointer;
+	font-weight: bold;
+	margin-left: 10px;
+	color: blue;
+	text-decoration: underline;
+}
+
+.ark-item-trace {
+	margin-left: 20px;
+}
+.ark-search-item-result {
+padding-top: 5px;
+padding-bottom: 5px;
+}
+.ark-search-item-result img {
+  display: inline-block !important;
+}
+input, .add-item {
+    background: 0 0;
+    font-size: 1.3em;
+    outline: none;
+    border-width: 0;
+    margin: 0;
+    padding-top: .6em;
+      padding-bottom: .6em;
+    border-radius: 8px;
+   border: 1px solid var(--border);
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+    margin-bottom: 10px;
+}
+.padding-box {
+    padding: 15px;
+    padding-bottom: 5px;
+}
+.padding-sides {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.item-input {
+  width: 70%;
+  border-radius: 0px;
+      border-left-width: 0;
+  padding-left: .6em;
+}
+.number-input {
+  width: 15%;
+    border-radius: 8px 0px 0px 8px;
+    text-align: center;
+}
+.add-item {
+    width: 14.3%;
+    text-align: center;
+    display: inline-block;
+    padding-top: 12.2px;
+    padding-bottom: 12.6px;
+    border-radius: 0px 8px 8px 0px;
+  border-left: 0px;
+  border-color: var(--maincolor);
+  background: var(--maincolor);
+  color: #fff;
+}
+.clear-all-items {
+    background: var(--maincolor);
+    border: none;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 8px;
+      padding-top: .3em;
+      padding-bottom: .2em;
+  border-radius: 8px;
+    border: 2px solid rgba(0,0,0,.75);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .00937em;
+}
+.clear-all-items {
+  background: transparent;
+  width: auto;
+  border: none;
+  color: #D93757;
+  text-align: center;
+  float: right;
+  padding-right: 10px;
+}
+.remove-item {
+    float: right;
+    color: #D93757;
+    font-size: 17px;
+    margin-top: 1px;
+    margin-right: 10px;
+    border: 0;
+}
+.item-totals {
+  width: 25%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+
+}
+#ark-calculator-totals {
+    display: flex;
+  flex-wrap: wrap;
+  width: 97%;
+    background: #fff;
+	max-width: 750px;
+	margin-left: auto;
+	margin-right: auto;
+		box-shadow: var(--shadow);
+	border-radius: 8px;
+    border: 1px solid var(--border);
+  text-align: center;
+}
+.item-name {
+  display: block;
+  font-size: 12px;
+  color: rgba(0,0,0,0.3);
+}
+.item-image {
+  width: 24px;
+  height: 24px;
+  display: block;
+      margin-left: auto;
+    margin-right: auto;
+}
+.amount {
+  font-weight: 700;
+margin-top: 4px;
+    margin-bottom: -4px;
+  font-size: 22px;
+}
+.clear {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+.title {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.less-padding {
+  padding: 0px;
+  padding-left: 5px;
+}
