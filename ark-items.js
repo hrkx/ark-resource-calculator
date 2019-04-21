@@ -1,24 +1,3 @@
-// Data coming from : http://ark.gamepedia.com/
-// all items are in the array "ark_items"
-// each items contains these attributes
-//		name : Item Name
-//		maxStack : Maximum item per stack
-//		decomposes : Time before the item diseappear
-//		itemId : ARK item Id
-//		description : Item Description
-//		image : Image name
-//		weight : Item Weight
-//			each ingredients must contain
-//				itemId : item of the ingredient
-//				itemId2 : (Optional) second item id of the ingredient (for item that need Chitin/Keratin)
-//				count : count of items needed
-//		stats : list of item stat
-//			id : Stat ID
-//			value : Stat Value
-//
-// All right for item, including name, description, recipes, images belong to Wildcard Studio, developers of Ark: Survival Evolved
-//
-
 var ark_itemsVersion = {
 	itemizer: 1,
 	ark: {major: 195, minor: 0}
@@ -6173,7 +6152,7 @@ var ark_items = [
   {
 		"name": "Condensed Gas",
 		"itemId": '466',
-		"image": "Condensed_Gas(Extinction).png",
+		"image": "Condensed_Gas_(Extinction).png",
 "recipe": [
 ],
 		"stats": [
@@ -6995,7 +6974,7 @@ var ark_items = [
   {
 		"name": "Dunkleosteus Saddle",
 		"itemId": '530',
-"image":"Dunkleosteus_Saddle_Saddle.png",
+"image":"Dunkleosteus_Saddle.png",
 		"recipe": [
       {"itemId":10, "count":300},
       {"itemId":76, "count":180},
@@ -9372,7 +9351,7 @@ var ark_items = [
   {
 		"name": "Parchment Coloring",
 		"itemId": '701',
-"image":"Parchment_Coloring.png",
+"image":"Parchement_Coloring.png",
 		"recipe": [
       {"itemId":117, "count":12},
       {"itemId":122, "count":6},
@@ -10281,6 +10260,20 @@ var ark_items = [
       {"itemId":74, "count":2},
       {"itemId":162, "count":4},
       {"itemId":166, "count":6},
+    ],
+		"stats": [
+			{"id": 1, "value": "Tool"},
+		]
+		},
+		  {
+		"name": "Adobe Triangle Foundation",
+		"itemId": '769',
+"image":"Adobe_Triangle_Foundation_(Scorched_Earth).png",
+		"recipe": [
+      {"itemId":467, "count":40},
+      {"itemId":76, "count":8},
+      {"itemId":75, "count":10},
+      {"itemId":7, "count":20},
     ],
 		"stats": [
 			{"id": 1, "value": "Tool"},
