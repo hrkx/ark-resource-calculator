@@ -1,8 +1,7 @@
-
 <html>
 	<head>
 		<title>ARK Resource Calculator</title>
-		<link href="style.css?v=1.1.0" rel="stylesheet">
+		<link href="ark-itemizer.css?v=1.1.4" rel="stylesheet">
 <!-- Code snippet to speed up Google Fonts rendering: googlefonts.3perf.com -->
 <link rel="dns-prefetch" href="https://fonts.gstatic.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
@@ -12,14 +11,52 @@
 </script>
 <!-- End of code snippet for Google Fonts -->
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
     <meta name="theme-color" content="#1E88E5">
+    <meta name="keywords" content="ark, ark survival, ark survival evolved, resource calculator, ark resource calculator, Ark: Survival Evolved, games">
+<meta name="description" content="An easy to use tool to help players craft items in Ark: Survival Evolved.">
+<style id='lightcss' type='text/css'>
+:root {
+	--bodycolor: #F5F9FF;
+	--maincolor: #1E88E5;
+  --bgcolor: #1E88E5;
+	--mainfont: 'Nunito', sans-serif;
+	--secondfont: 'Nunito', sans-serif;
+  --mainradius: 8px;
+	--cardbackground: #fff;
+  --white: #fff;
+  --border: #CDD9ED;
+  --shadow: 0 2px 4px rgba(22, 30, 50, .04);
+  --text-color: #6C7486;
+  --light-text: rgba(0,0,0,0.6);
+  --text-color-headline: #3F4656;
+}
+        .theme-btn {
+    background: #fff;
+    color: #000;
+    border: 0px solid rgba(0,0,0,.87);
+  }
+  .theme-btn::before {
+    content: "Dark Theme";
+}
+    </style>
 	</head>
 	<body onload="arkInit();">
+	     <script>
+  if(localStorage.getItem('theme')=='dark'){document.getElementById("lightcss").disabled=!0}
+        </script>
+        <div id="darken" onclick="slideout(),darken()">
+    </div>
+    <a onclick="slideout(),darken()" class="menu-btn"><i class="fas fa-bars"></i></a>
     <div id="bg">
 </div>
     <div class="navbar">
 Resource Calculator
+</div>
+<div class="info-bar">
+Check out the new <a href="https://www.tristan.games/apps/raidcalculator/">Raid Calculator</a>
+</div>
+<div class="info-bar">
+<a href="https://paypal.me/TristanGregory">Donate with PayPal</a>
 </div>
 		<div id="ark-calculator">
 			
@@ -37,13 +74,49 @@ Resource Calculator
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js
+    <div id="menu">
+  <div class="slide-menu-header">
+    Resource Calculator 
+</div>
+    <div class="menu-box">
+      <p class="menu-title">About</p>
+        <a class="menu-link hidden" onclick="aboutslideout()">About</a>
+        <a class="menu-link" href="https://discord.gg/urMu7D5">Discord</a>
+      <a class="menu-link" href="https://twitter.com/Tristan_Greg">Twitter</a>
+     </div>
+      <div class="menu-box">
+      <p class="menu-title">Settings</p>
+      <div class="theme-btn" id='theme' title="Switch color theme (dark/light)"></div>
+     </div>
+
+</div>
+  <div id="aboutmenu">
+  <div class="menu-header">
+    About
+<button class="closer" onclick="aboutslideout()"><i class="fas fa-angle-left"></i></button>
+    </div>
+  <div class="about-card hightop clear">
+    <img class="me" src="https://res.cloudinary.com/dhqtueu29/image/upload/q_auto:good,w_100/v1543471439/TristanGames%20Extras/yeah1">
+    <p class="about-text">Made by Tristan Gregory</p>
+    <a class="sitelink" href="https://tristan.games">https://tristan.games</a>
+    </div>
+  <div class="about-card clear">
+    <h4>About</h4>
+    <br>
+    </div>
+    <span class="liltext">V 1.0.2</span><br>
+  <br>
+  <span class="liltext lighter">Icons copyright Studio Wildcard</span>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 "></script>
-		<script src="ark-items.js?v=1.1.1"></script>
-		<script src="ark-itemizer.js?v=1.1.0"></script>
+		<script src="ark-items.js?v=1.1.2"></script>
+		<script src="ark-itemizer.js?v=1.1.9"></script>
 		<script>arkInjectCalculator('ark-calculator');</script>
 		<style>
-.ads-bar::before{content:"";text-align:center;width:100%;font-size:12px;display:block}.youtube{width:97%;max-width:750px;padding:5px;margin-left:auto;margin-right:auto;text-align:center;margin-bottom:5px;color:#fff}.yt-link{background:#f9013f;color:#000;padding:5px;border-radius:5px}.discord{background:#7289da}
+.ads-bar {
+    margin-bottom: 15px;
+}
 </style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -55,11 +128,38 @@ Resource Calculator
 
   gtag('config', 'UA-41266696-14');
 </script>
-
+<script>
+      function aboutslideout() {
+	var element = document.getElementById("aboutmenu");
+	element.classList.toggle("show")
+}
+      function slideout() {
+	var element = document.getElementById("menu");
+	element.classList.toggle("show")
+}
+      document.getElementById('theme').addEventListener("click", function() {
+	light = document.getElementById('lightcss');
+	if (light.disabled == !0) {
+		light.disabled = !1;
+		localStorage.removeItem("theme")
+	} else {
+		light.disabled = !0;
+		localStorage.setItem("theme", "dark")
+	}
+})
+      function darken() {
+	var element = document.getElementById("darken");
+	element.classList.toggle("overlay")
+}
+    </script>
 <style>
     #ark-search-item-matches {
         z-index: 1;
     }
+    .info-bar {
+    
+}
+
 </style>
 	</body>
 </html>
