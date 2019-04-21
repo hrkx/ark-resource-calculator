@@ -28,6 +28,15 @@ function arkInjectCalculator(containerId) {
 	html += '<input type="hidden" name="ark-search-item-id" id="ark-search-item-id" value="0" />';
 	//html += '<button class="add-item" onclick="arkCalculatorAddItem();">Add</button>';
 	html += '</div>';
+	html += '<div class="ads-bar"><center>';
+	html += '<ins class="adsbygoogle"';
+	html += 'style="display:block;width:320px;height:50px;"';
+	html += 'data-ad-client="ca-pub-2078248236710487"';
+	html += 'data-ad-slot="8805670831"></ins>';
+	html += '<script>';
+	html += '(adsbygoogle = window.adsbygoogle || []).push({});';
+	html += '</script>';
+	html += '</center></div>';
 	html += '<div class="ark-calculator-totals-container">';
 	html += '<div id="ark-calculator-totals"></div>';
 	html += '</div>';
@@ -54,7 +63,7 @@ function arkSearchItemKeyPress(evt) {
 		var results = arkSearchItemsByPrefix(prefix);
 		for (var i = 0; i < results.length; i++) {
 			var item = results[i];
-			var ihtml = '<div class="ark-search-item-result"><a class="ark-js-link" onclick="arkSelectItem(' + item.itemId + ', \'ark-search-item-id\', \'ark-search-item-match\'); arkCalculatorAddItem();"><img src="https://tristan.games/apps/resourcecalc/images/' + item.image + '" width="24" height="24" />' + item.name + '</a></div>';
+			var ihtml = '<div class="ark-search-item-result"><a class="ark-js-link" onclick="arkSelectItem(' + item.itemId + ', \'ark-search-item-id\', \'ark-search-item-match\'); arkCalculatorAddItem();"><img src="https://images.tristan.games/ark/items/128/' + item.image + '" width="24" height="24" />' + item.name + '</a></div>';
 			resultsContainer.append(ihtml);
 		}
 		if (results.length == 0) {
@@ -143,13 +152,13 @@ function arkCalculatorRenderCurrentItem() {
 			var item = arkGetItemById(costs[i].itemId);
 			var item2 = arkGetItemById(costs[i].itemId2);
 			var chtml = '<div class="item-totals" id="ark-calculator-totals-cost-' + i + '"><div class="padding-box">';
-			chtml += '<img class="item-image" src="https://tristan.games/apps/resourcecalc/images/' + item.image + '" /><p class="amount">' + costs[i].count + '</p><a class="ark-js-link item-name">' + item.name + '</a> or <img width="24" height="24" src="https://tristan.games/apps/resourcecalc/images/' + item2.image + '" /><a class="ark-js-link item-name">' + item2.name + '</a>';
+			chtml += '<img class="item-image" src="https://images.tristan.games/ark/items/128/' + item.image + '" /><p class="amount">' + costs[i].count + '</p><a class="ark-js-link item-name">' + item.name + '</a> or <img width="24" height="24" src="https://images.tristan.games/ark/items/128/' + item2.image + '" /><a class="ark-js-link item-name">' + item2.name + '</a>';
 			chtml += '</div></div>';
 			container.append(chtml);
 		} else {
 			var item = arkGetItemById(costs[i].itemId);
 			var chtml = '<div class="item-totals" id="ark-calculator-totals-cost-' + i + '"><div class="padding-box">';
-			chtml += '<img class="item-image" src="https://tristan.games/apps/resourcecalc/images/' + item.image + '" /><p class="amount">' + costs[i].count + '</p><a class="ark-js-link item-name">' + item.name + '</a>';
+			chtml += '<img class="item-image" src="https://images.tristan.games/ark/items/128/' + item.image + '" /><p class="amount">' + costs[i].count + '</p><a class="ark-js-link item-name">' + item.name + '</a>';
 			chtml += '</div></div>';
 			container.append(chtml);
 		}
@@ -423,7 +432,7 @@ function arkShowItemPopup(item, containerId) {
 	var html = '<div class="ark-item-popup" id="ark-popup-' + htmlId + '">';
   	html += '<div class="ark-item-popup-head">';
   	html += '<a class="close-btn" onclick="arkCloseItemPopup(' + htmlId + ');"><i class="fas fa-times"></i></a>';
-	html += '<div class="ark-item-image-container"><img class="ark-item-image" src="https://tristan.games/apps/resourcecalc/images/' + item.image + '"/></div>';
+	html += '<div class="ark-item-image-container"><img class="ark-item-image" src="https://images.tristan.games/ark/items/128/' + item.image + '"/></div>';
 	html += '</div>';
 	html += '<div class="ark-item-name">' + item.name + '</div>';
 	html += '<div class="ark-float-clear"></div>';
@@ -450,7 +459,7 @@ function arkShowItemPopup(item, containerId) {
 			} else {
 				var ingItem = arkGetItemById(item.recipe[i].itemId);
 				if (ingItem) {
-					html += '<img src="https://tristan.games/apps/resourcecalc/images/' + ingItem.image + '" class="ark-item-recipe-image" /><p class="popup-recipe-name">'+ count + '</p>' + ingItem.name + '</div>';
+					html += '<img src="https://images.tristan.games/ark/items/128/' + ingItem.image + '" class="ark-item-recipe-image" /><p class="popup-recipe-name">'+ count + '</p>' + ingItem.name + '</div>';
 				}
 			}
 		}
